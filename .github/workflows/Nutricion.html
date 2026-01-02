@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fitness&amp;Fogón - Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f97316", // A vibrant orange from the flame logo
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#000000",
+                        "surface-dark": "#121212",
+                        "text-light": "#1f2937",
+                        "text-dark": "#e5e7eb",
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        body: ["'Lato'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .moody-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased transition-colors duration-300">
+
+
+<!-- El cuerpo de web --->
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white">
+            Fitness<span class="text-primary">&amp;</span>Fogón
+          </span>
+        </div>
+      </div>
+
+      <!-- Menú desktop -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-6">
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Inicio.html">Inicio</a>
+		  <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Nosotros.html">Nosotros</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Entrenamiento.html">Entrenamiento</a>
+          <a class="text-primary font-bold px-3 py-2 rounded-md text-sm transition-colors border-b-2 border-primary" href="Nutricion.html">Nutrición</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Blog.html">Blog</a>
+          <a class="bg-primary text-white hover:bg-orange-600 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-lg shadow-orange-500/30" href="Contacto.httml">Suscríbete</a>
+        </div>
+      </div>
+
+      <!-- Botón hamburguesa (solo móvil) -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" 
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil (oculto por defecto) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+    <div class="px-4 pt-2 pb-3 space-y-1">
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Inicio.html">Inicio</a>
+	  <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Nosotro.html">Nosotros</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Entrenamiento.html">Entrenamiento</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Nutricion.html">Nutrición</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-primary font-bold border-l-2 border-primary" href="Blog.html">Blog</a>
+      <a class="mt-2 block w-full text-center bg-primary text-white hover:bg-orange-600 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-lg shadow-orange-500/30" href="Contacto.html">Suscríbete</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="relative w-full py-20 px-6 lg:px-12 xl:px-20 overflow-hidden">
+<div class="max-w-7xl mx-auto mb-16 text-center">
+<h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
+                Cocina con <span class="text-primary italic">Propósito</span>
+</h2>
+<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg font-light">
+                Bienestar que se cocina y se camina. Nutrición fundamentada en ciencia y sabor.
+            </p>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-[400px]">
+<div class="group relative lg:col-span-4 md:col-span-2 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Bowl saludable con vegetales y proteína" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh0HXWSw7WVyezF2f67tD8a9vkOS0fbl5tDHRbUD3RfLgeQZVHoLKVL6tCdOpeHEl6GCqFb66qhCwjRJk8ENJHGpdz8b6C3z0adGP9FTBIzLa8XMw5jZCjqKmVM28fqgqlwITHMH1BAZLs807OoeSBiUO423IXaRydmyCuNIEFGC1NKHRnN-u4EOkkm85no9-PpT0hMPi4eOAFSWxLmdB88nSntGYA2M1fWRS1-u5irDme4igecJkQVkw7bib-GgouJ7tMLaNi1ww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-10 flex flex-col items-start">
+<span class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-black bg-white rounded-full uppercase">Alta Proteína</span>
+<h3 class="font-display text-3xl font-bold text-white mb-2">Bowl Post-Entreno</h3>
+<div class="h-0.5 w-12 bg-primary mb-4"></div>
+<div class="bg-black/60 backdrop-blur-md border-l-2 border-primary p-4 rounded-r-lg max-w-md">
+<p class="text-xs text-primary font-bold uppercase mb-1 flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Toque de Ciencia
+                        </p>
+<p class="text-sm text-gray-300 leading-snug">
+                            Optimizado con la proporción 3:1 de carbohidratos/proteína para maximizar la resíntesis de glucógeno y reparación muscular.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-1 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Plato de cena saludable con vegetales verdes" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOXYpny7eO0t3yxdOodw1PA5lAPyGWt9zw80ecqh3YKZLsynWL2kecds97vnYNmOqfKpHyQPY2nBzh5wgsLmnmIn26Nm1yeVnv9sN7mvHlLwCojFskncwh6iFz_ODSzF9turhMIZUXdlU59Ia6wYjzDs4wFqoHKUDfxwDW9n8zUHGPUWqUhvEdvv9iegErwyuUpUz2unekZksb3I7dzbZTVyTCkywqK_xSY_Lv7XgE-ZuxAm5L-Rxda88ehnGfXLTxBQijKbaiy8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<span class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-white border border-white/30 backdrop-blur-sm rounded-full uppercase">Rápido</span>
+<h3 class="font-display text-2xl font-bold text-white mb-2">Cena Siete Minutos</h3>
+<div class="mt-4 border-t border-white/20 pt-3">
+<p class="text-xs text-primary font-bold uppercase mb-1 flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Toque de Ciencia
+                        </p>
+<p class="text-xs text-gray-300">
+                            Ingredientes ricos en triptófano y magnesio para mejorar la calidad del sueño.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-1 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Desayuno con avena y frutas" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdhQ6RbJ4UbWb7k486EiQr36VyYo2Sne1fVHwbzB2dRbVNLdVZupZwpBlN-J0ZXpT1pBs8-xgmhIh6CaH7690WBbF24AttKK9A2CjOHeHGvoYO7x62cdu3h_-xMygSDxTC4UQzKg987Esy3l15DGT1omKBQAcftBXLRQ5suhIuNSD_2NdbWB0rn8AGHphTbGv_rzZBelQiwtfLcHcxsWdV034MgvBC5RM8K3ov4UtB05H95mSlCOHYoMKZZt8qQZApWEg8WXrvA3Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<h3 class="font-display text-2xl font-bold text-white mb-2">Desayuno Saciante</h3>
+<div class="mt-2 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+<p class="text-xs text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Fibra &amp; GLP-1
+                        </p>
+<p class="text-xs text-gray-200 mt-1">
+                            Alta viscosidad para ralentizar el vaciado gástrico y extender la saciedad.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-1 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Snack de nueces y frutas secas" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqJmgMmLKOGPpsntTyxJYGS4ZoYhcokn4lZgdDrvgr-qTkFB-nWW2npe4UJ1GbsU7UlcaaZjPKiVEFHalqqKX5nLopfGNt59BZgmsCbJKlwTZtgndkWo7Prpt5GDZseheLJMtMsUkznRdVVDVQCJvsu2h1D4dBfaWsgK4eIvJXI36RqfcPqHemqldiG_y9zZkl6dgdAUTT0-xrSNKL6jeR8VJEinXX1roBYflnBJUSHGSy6Fz401sswWSXKWtG6jq0UT-uiiD7fEU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<h3 class="font-display text-2xl font-bold text-white mb-2">Snack de Resistencia</h3>
+<div class="mt-2 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+<p class="text-xs text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Energía Estable
+                        </p>
+<p class="text-xs text-gray-200 mt-1">
+                            Grasas saludables de cadena media para energía sostenida sin picos de insulina.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-2 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Guiso caliente estilo rústico" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9s_FSuSd3f6kyiubd61X_l1BCB2B8w0lFF10ZnoOydeA2K3DjOEUfc6HnSHqN_Q372-7n-VRvv4LkUGV7SIyCrwTxLibQdCiFDK_hN74MHgwL0xLhkeO1ykSZWdsZsjHHMz8-5IMD0HDIFd2aVe5KwAvjADdwdbJM3__CVYc2FxzjIHB_q2IcTMCi3axleibs1-aluBADRAOi2XkqNnlOK7tneSH0766NfrLhuEGqwrTXqR0_qK-LNFch0AOOWVciV4nr9YsGRp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<span class="text-primary tracking-widest uppercase text-xs font-bold mb-1 block">La especialidad</span>
+<h3 class="font-display text-2xl font-bold text-white mb-3">Guiso del Fogón</h3>
+<div class="bg-black/60 backdrop-blur-md border-l-2 border-primary p-3 rounded-r-lg">
+<p class="text-xs text-primary font-bold uppercase mb-1 flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Biodisponibilidad
+                        </p>
+<p class="text-xs text-gray-300">
+                            Cocción lenta que descompone colágeno y libera nutrientes esenciales de los tubérculos.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- seguna web --->
+<br><br>
+
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-[400px]">
+<div class="group relative lg:col-span-4 md:col-span-2 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Bowl saludable con vegetales y proteína" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh0HXWSw7WVyezF2f67tD8a9vkOS0fbl5tDHRbUD3RfLgeQZVHoLKVL6tCdOpeHEl6GCqFb66qhCwjRJk8ENJHGpdz8b6C3z0adGP9FTBIzLa8XMw5jZCjqKmVM28fqgqlwITHMH1BAZLs807OoeSBiUO423IXaRydmyCuNIEFGC1NKHRnN-u4EOkkm85no9-PpT0hMPi4eOAFSWxLmdB88nSntGYA2M1fWRS1-u5irDme4igecJkQVkw7bib-GgouJ7tMLaNi1ww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full z-10 flex flex-col items-start">
+<span class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-black bg-white rounded-full uppercase">Alta Proteína</span>
+<h3 class="font-display text-3xl font-bold text-white mb-2">Bowl Post-Entreno</h3>
+<div class="h-0.5 w-12 bg-primary mb-4"></div>
+<div class="bg-black/60 backdrop-blur-md border-l-2 border-primary p-4 rounded-r-lg max-w-md">
+<p class="text-xs text-primary font-bold uppercase mb-1 flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Toque de Ciencia
+                        </p>
+<p class="text-sm text-gray-300 leading-snug">
+                            Optimizado con la proporción 3:1 de carbohidratos/proteína para maximizar la resíntesis de glucógeno y reparación muscular.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-1 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Plato de cena saludable con vegetales verdes" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOXYpny7eO0t3yxdOodw1PA5lAPyGWt9zw80ecqh3YKZLsynWL2kecds97vnYNmOqfKpHyQPY2nBzh5wgsLmnmIn26Nm1yeVnv9sN7mvHlLwCojFskncwh6iFz_ODSzF9turhMIZUXdlU59Ia6wYjzDs4wFqoHKUDfxwDW9n8zUHGPUWqUhvEdvv9iegErwyuUpUz2unekZksb3I7dzbZTVyTCkywqK_xSY_Lv7XgE-ZuxAm5L-Rxda88ehnGfXLTxBQijKbaiy8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<span class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-white border border-white/30 backdrop-blur-sm rounded-full uppercase">Rápido</span>
+<h3 class="font-display text-2xl font-bold text-white mb-2">Cena Siete Minutos</h3>
+<div class="mt-4 border-t border-white/20 pt-3">
+<p class="text-xs text-primary font-bold uppercase mb-1 flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Toque de Ciencia
+                        </p>
+<p class="text-xs text-gray-300">
+                            Ingredientes ricos en triptófano y magnesio para mejorar la calidad del sueño.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-1 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Desayuno con avena y frutas" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdhQ6RbJ4UbWb7k486EiQr36VyYo2Sne1fVHwbzB2dRbVNLdVZupZwpBlN-J0ZXpT1pBs8-xgmhIh6CaH7690WBbF24AttKK9A2CjOHeHGvoYO7x62cdu3h_-xMygSDxTC4UQzKg987Esy3l15DGT1omKBQAcftBXLRQ5suhIuNSD_2NdbWB0rn8AGHphTbGv_rzZBelQiwtfLcHcxsWdV034MgvBC5RM8K3ov4UtB05H95mSlCOHYoMKZZt8qQZApWEg8WXrvA3Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<h3 class="font-display text-2xl font-bold text-white mb-2">Desayuno Saciante</h3>
+<div class="mt-2 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+<p class="text-xs text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Fibra &amp; GLP-1
+                        </p>
+<p class="text-xs text-gray-200 mt-1">
+                            Alta viscosidad para ralentizar el vaciado gástrico y extender la saciedad.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-1 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Snack de nueces y frutas secas" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqJmgMmLKOGPpsntTyxJYGS4ZoYhcokn4lZgdDrvgr-qTkFB-nWW2npe4UJ1GbsU7UlcaaZjPKiVEFHalqqKX5nLopfGNt59BZgmsCbJKlwTZtgndkWo7Prpt5GDZseheLJMtMsUkznRdVVDVQCJvsu2h1D4dBfaWsgK4eIvJXI36RqfcPqHemqldiG_y9zZkl6dgdAUTT0-xrSNKL6jeR8VJEinXX1roBYflnBJUSHGSy6Fz401sswWSXKWtG6jq0UT-uiiD7fEU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<h3 class="font-display text-2xl font-bold text-white mb-2">Snack de Resistencia</h3>
+<div class="mt-2 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+<p class="text-xs text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Energía Estable
+                        </p>
+<p class="text-xs text-gray-200 mt-1">
+                            Grasas saludables de cadena media para energía sostenida sin picos de insulina.
+                        </p>
+</div>
+</div>
+</div>
+<div class="group relative lg:col-span-2 md:col-span-2 rounded-2xl overflow-hidden shadow-lg bg-card-light dark:bg-card-dark transition-transform duration-500 hover:-translate-y-1">
+<img alt="Guiso caliente estilo rústico" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 filter brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9s_FSuSd3f6kyiubd61X_l1BCB2B8w0lFF10ZnoOydeA2K3DjOEUfc6HnSHqN_Q372-7n-VRvv4LkUGV7SIyCrwTxLibQdCiFDK_hN74MHgwL0xLhkeO1ykSZWdsZsjHHMz8-5IMD0HDIFd2aVe5KwAvjADdwdbJM3__CVYc2FxzjIHB_q2IcTMCi3axleibs1-aluBADRAOi2XkqNnlOK7tneSH0766NfrLhuEGqwrTXqR0_qK-LNFch0AOOWVciV4nr9YsGRp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full z-10">
+<span class="text-primary tracking-widest uppercase text-xs font-bold mb-1 block">La especialidad</span>
+<h3 class="font-display text-2xl font-bold text-white mb-3">Guiso del Fogón</h3>
+<div class="bg-black/60 backdrop-blur-md border-l-2 border-primary p-3 rounded-r-lg">
+<p class="text-xs text-primary font-bold uppercase mb-1 flex items-center gap-1">
+<span class="material-icons text-sm">science</span> Biodisponibilidad
+                        </p>
+<p class="text-xs text-gray-300">
+                            Cocción lenta que descompone colágeno y libera nutrientes esenciales de los tubérculos.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="bg-primary hover:bg-orange-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-primary/50 flex items-center gap-2 mx-auto">
+                Ver todas las recetas <span class="material-icons text-sm">arrow_forward</span>
+</button>
+</div>
+</section>
+
+<!---pier de paguina de wed --->
+
+<footer class="bg-white dark:bg-black pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Contenido principal del footer -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
+      <!-- Columna 1: Marca y descripción -->
+      <div class="col-span-1 md:col-span-1">
+        <span class="text-2xl font-display font-bold text-gray-900 dark:text-white block mb-4">
+          Fitness<span class="text-primary">&amp;</span>Fogón
+        </span>
+        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+          Fusionamos la ciencia del deporte con el arte culinario para crear un estilo de vida sostenible y placentero.
+        </p>
+      </div>
+
+      <!-- Columna 2: Explora -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Explora</h4>
+        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <li><a class="hover:text-primary transition-colors" href="#">Entrenamientos</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Recetas Saludables</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Mindset</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Equipamiento</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Legal -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Legal</h4>
+        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <li>
+            <a class="hover:text-primary transition-colors" href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" target="_blank" rel="noopener noreferrer">
+              Política de Privacidad
+            </a>
+          </li>
+          <li>
+            <a class="hover:text-primary transition-colors" href="https://policies.google.com/terms?hl=es" target="_blank" rel="noopener noreferrer">
+              Términos de Uso
+            </a>
+          </li>
+          <li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Redes sociales -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Social</h4>
+        <div class="flex space-x-4">
+          <a class="text-gray-400 hover:text-primary transition-colors" href="https://youtube.com/@FitnessFogon" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a class="text-gray-400 hover:text-primary transition-colors" href="https://www.instagram.com/fitnessfogon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.373c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a class="text-gray-400 hover:text-primary transition-colors" href="https://www.tiktok.com/@fitnessfogon" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.43-4.43V9.64a6.37 6.37 0 00-6.02 4.06 6.35 6.35 0 007.57 9.44V15.5a2.89 2.89 0 015.2-1.74 2.89 2.89 0 01-2.43 4.43v3.64a6.37 6.37 0 006.02-4.06 6.35 6.35 0 00-3.58-7.15z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Créditos finales, sin línea divisoria -->
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-xs text-gray-500 dark:text-gray-500">
+        © 2026 Fitness&amp;Fogón. Todos los derechos reservados.
+      </p>
+      <div class="flex items-center gap-2 mt-4 md:mt-0">
+        <span class="text-xs text-gray-500 dark:text-gray-500">Fitness&Fogón</span>
+		<a class="text-gray-400 hover:text-primary transition-colors" href="Inicio.html">
+        <span class="material-icons text-primary text-sm" aria-hidden="true">local_fire_department</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--  Java sctipt--->
+
+<script>
+        // Simple script to toggle dark mode for demonstration
+        // In a real app this would check system preferences or local storage
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+		
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+    mobileMenu.classList.toggle('hidden');
+    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+  });
+    </script>
+</body></html>

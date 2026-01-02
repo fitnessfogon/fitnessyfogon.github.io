@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fitness&amp;Fogón - Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f97316", // A vibrant orange from the flame logo
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#000000",
+                        "surface-dark": "#121212",
+                        "text-light": "#1f2937",
+                        "text-dark": "#e5e7eb",
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        body: ["'Lato'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .moody-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased transition-colors duration-300">
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white">
+            Fitness<span class="text-primary">&amp;</span>Fogón
+          </span>
+        </div>
+      </div>
+
+      <!-- Menú desktop -->
+        <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-6">
+          <a class="text-primary font-bold px-3 py-2 rounded-md text-sm transition-colors border-b-2 border-primary" href="Inicio.html">Inicio</a>
+		  <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Nosotros.html">Nosotros</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Entrenamiento.html">Entrenamiento</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Nutricion.html">Nutrición</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors" href="Blog.html">Blog</a>
+          <a class="bg-primary text-white hover:bg-orange-600 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-lg shadow-orange-500/30" href="Contacto.html">Suscríbete</a>
+        </div>
+      </div>
+
+      <!-- Botón hamburguesa (solo móvil) -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" 
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil (oculto por defecto) -->
+ <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+    <div class="px-4 pt-2 pb-3 space-y-1">
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-primary font-bold border-l-2 border-primary" href="Inicio.html">Inicio</a>
+	  <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Nosotro.html">Nosotros</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Entrenamiento.html">Entrenamiento</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Nutricion.html">Nutrición</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="Blog.html">Blog</a>
+      <a class="mt-2 block w-full text-center bg-primary text-white hover:bg-orange-600 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-lg shadow-orange-500/30" href="Contacto.html">Suscríbete</a>
+    </div>
+  </div>
+</nav>
+
+<!--Secion de inicio-->
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Dark moody kitchen fitness background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALJgs9iTgwZytwap9vu8WU9xOBmGBEejZksbJwn95TiwxHIhe1MD_3dE3eSHINbTs32H45KcFxV_7qSfWCfyTklHnkEHHvMjKCPcKC31oZ9I4eTe4hu8RC-Uhodmzl0ODDD3eEPAZN4XeHynJmIEJ0EwhZWfevUKzl8T-KTXc2COe0kabhhNFSV81VvfXbV66IzuKvr-XUaAnQdZnnMENfYOxIw4kozTXiCwqmL066f4Hr7qZfnVD7n0AVscHZNTjUODc7IC9cnls"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent dark:from-black dark:via-black/90 dark:to-black/40"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8 animate-fade-in-up">
+<div class="inline-flex items-center space-x-2 bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5">
+<span class="material-icons text-primary text-sm">local_fire_department</span>
+<span class="text-sm font-semibold text-gray-100 tracking-wide uppercase">Bienestar Humano</span>
+</div>
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+                        Bienestar que se <br/>
+<span class="text-primary italic">cocina</span> y se <span class="text-primary italic">camina.</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed border-l-4 border-primary pl-6">
+                        Ciencia, cocina real y fitness accesible desde tu propio fogón. Transformamos hábitos en un estilo de vida sostenible.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<!-- Botón principal: Explora Recetas -->
+<a
+  href="https://www.vitonica.com/"target="_blank" rel="noopener noreferrer"
+  class="group relative px-8 py-4 bg-primary text-white font-bold rounded-lg overflow-hidden shadow-lg shadow-orange-900/30 transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black inline-flex items-center"
+>
+  <span class="relative z-10 flex items-center gap-2">
+    Explora Recetas
+    <span class="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+  </span>
+  <div class="absolute inset-0 h-full w-full scale-0 rounded-lg transition-all duration-300 group-hover:scale-100 group-hover:bg-orange-700/50"></div>
+</a>
+
+<!-- Botón secundario: Entrena Conmigo -->
+<a
+  href="https://www.vitonica.com/"target="_blank" rel="noopener noreferrer"
+  class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black inline-flex items-center justify-center"
+>
+  Entrena Conmigo
+</a>
+</div>
+
+<div class="pt-8 flex items-center gap-6 text-gray-400 text-sm">
+<div class="flex -space-x-3">
+<img alt="User 1" class="w-10 h-10 rounded-full border-2 border-black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYGqQDAgSl5r1yP9bvjwAZ3xbUiYTr2cGmbkdj6WEiZekKPptLJEcJKJjqNCVqQIeS8rGkZRb2-XNTDTT0soeqCUArEN6AgZOCGhNN5sfMss-l1IF-Eib2GiVM-TF4D55qoMxvrhwIfnQP4VbqsbBMfWlk-FJGh5aTnyYVZNFtG7P5IWFW3dkoDA74XwZCtzo2y0xQkvcRdJ7xP2jnBBKLrT8vnU08EvYZateJp26bKSkyECFQ5JeBA6PUrZTee7Vdnp4oEGIVT0A"/>
+<img alt="User 2" class="w-10 h-10 rounded-full border-2 border-black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMkZtr49BilNqNOm6YLz0KCQMCiueml8r-ol0QBmHSOakbuE4uHOoN0S-gahtSHDrOfcl7aLe327smUx6cFgQ3j6dohNadsaNKXAzSDMBz0NQ3ScYTqA71swoIyzWXwHjcFaa39F10c9F4Igq6_v50QavTsYheE7XOElwf4FCypA4JlQgMa8JZPKIuKv2f-JHz1QKdlHqPgDK5lravJcHZRn-beN71g_9xjIAKeYwilZm1DWINQD25ol6Z6NszUvZ9pEiACO3RKbo"/>
+<img alt="User 3" class="w-10 h-10 rounded-full border-2 border-black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC54IFw2qmsel1vLLg7yBLnLhP4mrsukryDjn7Hrwm3kBFcyCGuKuRRd-etzm-l31HHqgiKm9iEFJdlBt_PAdYnmMG6J0UrIcfzs-prlT15VPOZvTLxJL53O7ML5KkUSRQWAeF5CN0i-3m3FIwDJo8xzkE0ReZCprM3vtxcdStU5C9FFDM2EKaUFC5LGuHHf2jOBvDufz5PfBN1402sLkWYdE4I0kmpHEXIPCUox5h6EDKQufYR6txzTza1Cnv1UDk9wGWGJCmPLCE"/>
+</div>
+<p>Únete a más de <span class="text-white font-bold">2,500</span> miembros activos.</p>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="relative w-full aspect-square max-w-md mx-auto">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10 transform hover:scale-105 transition-transform duration-700">
+<img alt="Logotipo abstracto de fuego F de Fitness &amp; Fogón" class="object-contain w-3/4 h-3/4 drop-shadow-[0_0_15px_rgba(255,127,0,0.5)] transform group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDM9B36a6xrLPKrHqCVlV-pkACYs6y65V0voEbMI46-yOiely2vU4BxIDmdeuk9pi5PeLdfRRRCXyYl2ZxwSBAT6mhXmYny4dKM08LibN0XW91f30zaLKZH_RkbVbfnC5b-2-XvXFbKR2r-cCE2yCle7w_3AL0LpoOvhPtENh4UCDuQkSrlEiRgU6AOa2_BD8iTAzjTx9IP-2gKd8FzjiMyP4G3jynfQNZqPFqfmldc2QokSdhklwJbwomUG6hGC58GMP_vVJUyyg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent z-20"></div>
+</section>
+
+<!--seccion de caja de inicio-->
+
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-surface-dark p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-800">
+<div class="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-3xl">restaurant_menu</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-3 text-gray-900 dark:text-white">Cocina Real</h3>
+<p class="text-gray-600 dark:text-gray-400">Recetas nutritivas sin complicaciones. Vuelve a lo básico con ingredientes que entiendes.</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-800">
+<div class="w-14 h-14 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-secondary text-3xl">fitness_center</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-3 text-gray-900 dark:text-white">Entrenamiento Inteligente</h3>
+<p class="text-gray-600 dark:text-gray-400">Rutinas eficientes adaptadas a tu nivel. Sin gimnasios costosos, solo movimiento.</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-800">
+<div class="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-gray-700 dark:text-gray-300 text-3xl">science</span>
+</div>
+<h3 class="font-display text-2xl font-bold mb-3 text-gray-900 dark:text-white">Basado en Ciencia</h3>
+<p class="text-gray-600 dark:text-gray-400">Olvídate de las dietas de moda. Información respaldada para resultados duraderos.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<footer class="bg-white dark:bg-black pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Contenido principal del footer -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
+      <!-- Columna 1: Marca y descripción -->
+      <div class="col-span-1 md:col-span-1">
+        <span class="text-2xl font-display font-bold text-gray-900 dark:text-white block mb-4">
+          Fitness<span class="text-primary">&amp;</span>Fogón
+        </span>
+        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+          Fusionamos la ciencia del deporte con el arte culinario para crear un estilo de vida sostenible y placentero.
+        </p>
+      </div>
+
+      <!-- Columna 2: Explora -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Explora</h4>
+        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <li><a class="hover:text-primary transition-colors" href="#">Entrenamientos</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Recetas Saludables</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Mindset</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Equipamiento</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Legal -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Legal</h4>
+        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <li>
+            <a class="hover:text-primary transition-colors" href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" target="_blank" rel="noopener noreferrer">
+              Política de Privacidad
+            </a>
+          </li>
+          <li>
+            <a class="hover:text-primary transition-colors" href="https://policies.google.com/terms?hl=es" target="_blank" rel="noopener noreferrer">
+              Términos de Uso
+            </a>
+          </li>
+          <li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Redes sociales -->
+      <div>
+        <h4 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Social</h4>
+        <div class="flex space-x-4">
+          <a class="text-gray-400 hover:text-primary transition-colors" href="https://youtube.com/@FitnessFogon" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a class="text-gray-400 hover:text-primary transition-colors" href="https://www.instagram.com/fitnessfogon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.373c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a class="text-gray-400 hover:text-primary transition-colors" href="https://www.tiktok.com/@fitnessfogon" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.43-4.43V9.64a6.37 6.37 0 00-6.02 4.06 6.35 6.35 0 007.57 9.44V15.5a2.89 2.89 0 015.2-1.74 2.89 2.89 0 01-2.43 4.43v3.64a6.37 6.37 0 006.02-4.06 6.35 6.35 0 00-3.58-7.15z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Créditos finales, sin línea divisoria -->
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-xs text-gray-500 dark:text-gray-500">
+        © 2026 Fitness&amp;Fogón. Todos los derechos reservados.
+      </p>
+      <div class="flex items-center gap-2 mt-4 md:mt-0">
+        <span class="text-xs text-gray-500 dark:text-gray-500">Fitness&Fogón</span>
+		<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+        <span class="material-icons text-primary text-sm" aria-hidden="true">local_fire_department</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+   <!--java script --->
+<script>
+        // Simple script to toggle dark mode for demonstration
+        // In a real app this would check system preferences or local storage
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+		
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+    mobileMenu.classList.toggle('hidden');
+    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+  });
+    </script>
+
+
+</body></html>
